@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+
+:root {
+  --green: #16ff00;
+  --white: #f5f5f5;
+  --gray: #cdcccc;
+  --black: #121212;
+}
+
+/* Standard Definition and Style Reset */
+
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  color: var(--gray);
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  cursor: pointer;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  scale: 0.95;
+  box-shadow: 2px 2px 20px var(--gray);
+  transition: all 0.4s;
+}
+
+/* Main Styles */
+
+body {
+  background: var(--black);
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header START */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  background-color: var(--black);
+  z-index: 1;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header .nav-btn {
+  display: none;
+}
+
+.spec-link {
+  color: var(--green);
+}
+
+/* Header END */
+
+/* Footer START */
+
+footer {
+  margin-top: 200px;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+footer .links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+}
+
+footer .links .link-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+footer form {
+  display: flex;
+  gap: 20px;
+}
+
+footer form input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  max-height: 50px;
+}
+
+footer form button {
+  background-color: var(--green);
+  white-space: nowrap;
+}
+
+footer .bottom {
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid var(--gray);
+  padding: 20px;
+}
+
+/* Footer END */
+
+/* welcome SECTION START */
+
+#hero {
+  height: 50vh;
+  background: url(IMG/back.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+
+#hero-inner {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  margin-left: 20px;
+  text-align: center;
+  /* glass effect From https://css.glass */
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.4px);
+  -webkit-backdrop-filter: blur(0.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+#hero-inner h1 {
+  color: var(--green);
+}
+
+#hero-inner p {
+  text-shadow: 2px 2px 10px var(--black);
+  color: #f5f5f5;
+}
+
+#hero-inner button:nth-child(1) {
+  background-color: var(--green);
+}
+
+/* welcome SECTION END */
+
+/* Window section START */
+
+section {
+  padding: 30px;
+}
+
+#window-sec {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.window-sec-info {
+  max-width: 600px;
+  display: grid;
+  gap: 30px;
+}
+
+.window-sec-info button {
+  max-height: 60px;
+  max-width: 200px;
+}
+
+.windows {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 50px;
+}
+.windows .window {
+  min-width: 200px;
+  height: 400px;
+  background: url(IMG/sec2.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 40px 40px 0 0;
+}
+
+.windows .window:nth-child(2) {
+  border-radius: 40px;
+}
+/* Window section END */
+
+/* Card Section START */
+
+.cards-sec-info {
+  max-width: 600px;
+  display: grid;
+  gap: 40px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card{
+    border: 1px solid gray;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.card video{
+    width: 200px;
+}
+
+
+/* Card Section END */
+
+
+
+
+
+
+
+
+/* RESPONSIVE START */
+
+@media (max-width: 1200px) {
+  #window-sec {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .window {
+    height: 300px;
+  }
+
+  .window-sec-info button {
+    max-width: 100%;
+  }
+  
+}
+
+@media (max-width: 1000px) {
+  footer .links {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px;
+    row-gap: 50px;
+    column-gap: 100px;
+  }
+
+  footer form {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  footer form input {
+    max-width: 200px;
+  }
+
+  footer .links .link-area:nth-child(even) {
+    text-align: start;
+  }
+
+  /* card section responsive START */
+  .cards{
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+  .card{
+    max-width: 400px;
+  }
+  /* card section responsive END */
+}
+
+@media (max-width: 800px) {
+  header nav {
+    display: none;
+  }
+  header .nav-btn {
+    display: block;
+  }
+
+  .toggle {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 5px;
+    top: 70px;
+    background: #6a6a6a;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.21);
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(0.1px);
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+
+  #hero-inner {
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  footer {
+    padding: 5px;
+  }
+
+  footer .links {
+    padding: 5px;
+    column-gap: 50px;
+  }
+
+  footer form input {
+    max-width: 140px;
+  }
+}
+
+@media (min-width: 1000px) {
+  section {
+    padding: 100px;
+  }
+}
+
+/* RESPONSIVE END */
